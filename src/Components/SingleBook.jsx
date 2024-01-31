@@ -11,13 +11,17 @@ class SingleBook extends Component {
 
   render() {
     return (
-      <Col>
+      <Col key={this.props.book.asin}>
         <Card
-          className="mt-3 w-100 h-100 border-0"
+          className={
+            this.state.selected
+              ? "mt-3 w-100 h-100 border-5 border-danger "
+              : "mt-3 w-100 h-100 border-0"
+          }
           onClick={() => {
-            // this.state.condition.selected=== false ? this.setState({condition:{selected:true}}):this.state.condition.selected===true ? this.setState({condition:{selected:false}})
+            // this.setState({ selected: this.state.selected ? false : true });
             this.setState({
-              condition: { selected: true },
+              selected: !this.state.selected,
             });
           }}
         >

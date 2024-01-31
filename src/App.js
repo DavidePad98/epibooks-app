@@ -5,10 +5,8 @@ import CustomFooter from "./Components/CustomFooter";
 // import AllTheBooks from "./Components/AllTheBooks";
 import WelcomeAlert from "./Components/WelcomeAlert";
 // import SingleBook from "./Components/SingleBook";
-// import Horror from "./data/books/horror.json";
 import BookList from "./Components/BookList";
-// import Fantasy from "./data/books/fantasy.json";
-// import History from "./data/books/history.json";
+import books from "./data/books/fantasy.json";
 
 function App() {
   return (
@@ -20,7 +18,7 @@ function App() {
         <WelcomeAlert />
         {/* <AllTheBooks /> */}
         {/* <SingleBook book={Horror[0]} /> */}
-        <BookList />
+        <BookList jsonBooks={books} />
       </main>
       <footer>
         <CustomFooter />
