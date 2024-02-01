@@ -1,12 +1,15 @@
 import { Component } from "react";
+// import { ListGroup } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
+import CommentArea from "./CommentArea";
 
 class SingleBook extends Component {
   state = {
     condition: {
       selected: false,
     },
+    comments: [],
   };
 
   render() {
@@ -29,6 +32,10 @@ class SingleBook extends Component {
           <Card.Body>
             <Card.Title>{this.props.book.title}</Card.Title>
             <Card.Text>{this.props.book.category}</Card.Text>
+            {/* <CommentArea /> */}
+            {this.state.condition.selected && (
+              <CommentArea asin={this.props.book.asin} />
+            )}
           </Card.Body>
         </Card>
       </Col>

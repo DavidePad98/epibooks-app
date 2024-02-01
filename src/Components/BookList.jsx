@@ -34,7 +34,7 @@ class BookList extends Component {
                 .includes(this.state.searchValue.toLowerCase())
             )
             .map((book) => (
-              <SingleBook book={book} />
+              <SingleBook book={book} key={book.asin} />
             ))}
         </Row>
       </Container>
